@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Karki Dai Bakery{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <script src="{% static 'script.js' %}" defer></script>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="logo">🍰 Karki Dai Bakery</div>
+  <nav class="navbar">
+<form action="{% url 'search' %}" method="GET" class="search-form">
+  <input 
+    type="text" 
+    name="q" 
+    id="searchBar" 
+    placeholder="Search cakes..."
+    value="{{ request.GET.q }}"
+  >
+</form>
+    <a href="#">About Us</a>
+    <a href="#">Blogs</a>
+    <a href="#">Contact / Login</a>
+  </nav>
+</header>
+
+<!-- ===== PAGE CONTENT ===== -->
+<main>
+  {% block content %}
+  {% endblock %}
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-links">
+    <h3>Quick Links</h3>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="#">Who we are?</a>
+    <a href="#">Signature Cakes</a>
+    <a href="#">Designer Cakes</a>
+    <a href="#">Desserts</a>
+    <a href="#">Contact</a>
+    <a href="#">Terms and Service</a>
+    <a href="#">Shipping Policy</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Refund Policy</a>
+  </div>
+
+  <div class="footer-contact">
+    <h3>Stay Connected</h3>
+    <input type="email" id="newsletterEmail" placeholder="Enter email">
+    <button onclick="subscribe()">Subscribe</button>
+    <p>© Karki Dai Bakery All Rights Reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>

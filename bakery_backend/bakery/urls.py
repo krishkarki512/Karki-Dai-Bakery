@@ -1,6 +1,8 @@
 from django.urls import path
-from . import views
+from .views import home, search_cakes
+
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', home, name='home'),
+    path('search/', search_cakes, name='search'),
 ]

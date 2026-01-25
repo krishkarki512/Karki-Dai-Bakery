@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+
+<section class="cakes">
+  <h2>
+    {% if query %}
+      Search Results for: "{{ query }}"
+    {% else %}
+      All Cakes
+    {% endif %}
+  </h2>
+
+  <div class="cake-grid" id="cakeGrid">
+    {% if cakes %}
+      {% for cake in cakes %}
+      <div class="cake-card">
+        <img src="{{ cake.image.url }}" alt="{{ cake.name }}">
+        <h3>{{ cake.name }}</h3>
+        <p>₹{{ cake.price }}</p>
+      </div>
+      {% endfor %}
+    {% else %}
+      <p style="color:red; text-align:center; grid-column: 1 / -1;">No cakes found 😢</p>
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home | Karki Dai Bakery{% endblock %}
+
+{% block content %}
+
+<section class="about">
+  <h1>Welcome to Karki Dai Bakery</h1>
+  <p>
+    At Karki Dai Bakery, we craft happiness in every bite using premium
+    ingredients and heartfelt recipes. From freshly baked cakes to designer
+    desserts, we make your celebrations sweeter.
+  </p>
+</section>
+
+<section class="cakes">
+  <h2>Our Signature Cakes</h2>
+  <div class="cake-grid" id="cakeGrid">
+    {% for cake in cakes %}
+    <div class="cake-card">
+      <img src="{{ cake.image.url }}" alt="{{ cake.name }}">
+      <h3>{{ cake.name }}</h3>
+      <p>₹{{ cake.price }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="reviews">
+  <h2>Customer Reviews ⭐⭐⭐⭐⭐</h2>
+  <p>⭐ 4.8 / 5 Average Rating</p>
+  <ul>
+    <li>Best cakes in town! Fresh and delicious.</li>
+    <li>Amazing design and taste. Highly recommended!</li>
+    <li>Perfect cakes for every celebration.</li>
+  </ul>
+</section>
+
+{% endblock %}
