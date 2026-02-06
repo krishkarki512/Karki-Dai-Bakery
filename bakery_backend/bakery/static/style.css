@@ -14,8 +14,8 @@ body {
 
 /* ===== HEADER ===== */
 .header {
-  background: #ede0e0;
-  color: rgb(251, 251, 251);
+  background: #14121f;
+  color: #2f2f2f;
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -49,7 +49,7 @@ body {
 }
 
 .navbar a {
-  color: white;
+  color: #111111;
   text-decoration: none;
   margin-left: 10px;
   transition: color 0.3s;
@@ -86,7 +86,7 @@ main {
 }
 
 .cake-card {
-  background: white;
+  background: rgba(52, 51, 51, 0.204);
   padding: 15px;
   border-radius: 10px;
   text-align: center;
@@ -105,7 +105,7 @@ main {
 /* HOVER EFFECT */
 .cake-card:hover {
   background: #512a58;
-  color: white; /* Optional: makes text readable on hover */
+  color: black; /* Optional: makes text readable on hover */
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
@@ -131,7 +131,7 @@ main {
 
 .search-form input[type="text"]:focus {
   border-color: #ff7f50;
-  box-shadow: 0 0 5px #ff7f50;
+  box-shadow: 0 0 5px #14121f;
 }
 
 
