@@ -15,7 +15,7 @@ body {
 /* ===== HEADER ===== */
 .header {
   background: #14121f;
-  color: #2f2f2f;
+  color: #ffffff;
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -49,7 +49,7 @@ body {
 }
 
 .navbar a {
-  color: #111111;
+  color: whitesmoke;
   text-decoration: none;
   margin-left: 10px;
   transition: color 0.3s;
@@ -59,21 +59,18 @@ body {
   color: #1d4e2a;
 }
 
-
-
 /* ===== MAIN CONTENT ===== */
-/* MAIN LAYOUT */
 main {
   padding: 30px 15px;
 }
 
-/* ABOUT SECTION */
-.about {
-  text-align: center;
-  margin-bottom: 40px;
+
+/* ABOUT SECTION */ 
+.about { 
+  text-align: center; margin-bottom: 40px; 
 }
 
-/* CAKES SECTION */
+/* ===== CAKES SECTION ===== */
 .cakes {
   text-align: center;
   margin-bottom: 40px;
@@ -102,10 +99,9 @@ main {
   transition: transform 0.3s;
 }
 
-/* HOVER EFFECT */
 .cake-card:hover {
   background: #512a58;
-  color: black; /* Optional: makes text readable on hover */
+  color: black;
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
@@ -114,13 +110,13 @@ main {
   transform: scale(1.05);
 }
 
-/* REVIEWS SECTION */
+/* ===== REVIEWS SECTION ===== */
 .reviews {
   text-align: center;
   margin-bottom: 40px;
 }
 
-/* SEARCH FORM (optional) */
+/* ===== SEARCH FORM ===== */
 .search-form input[type="text"] {
   padding: 8px 12px;
   border: 1px solid #cccccc37;
@@ -130,10 +126,9 @@ main {
 }
 
 .search-form input[type="text"]:focus {
-  border-color: #ff7f50;
+  border-color: #14121f;
   box-shadow: 0 0 5px #14121f;
 }
-
 
 /* ===== FOOTER ===== */
 .footer {
@@ -179,6 +174,77 @@ main {
   background: #a00000;
 }
 
+/* ===== SIGN IN / SIGN UP PAGES ===== */
+.auth-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.auth-box {
+  background: #1e1b2a;
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.auth-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffcccb;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: #14121f;
+  color: #fff;
+}
+
+.auth-box input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 5px #ff6b6b;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  background: #ff6b6b;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.auth-box button:hover {
+  background: #e55a5a;
+}
+
+.auth-box p {
+  text-align: center;
+  margin-top: 15px;
+  color: #ccc;
+}
+
+.auth-box p a {
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+.auth-box p a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -188,67 +254,75 @@ main {
   .cake-grid {
     grid-template-columns: 1fr;
   }
-}
 
-/* ===== SEARCH BAR RESPONSIVE FIX ===== */
-@media (max-width: 768px) {
+  .auth-box {
+    width: 90%;
+  }
+
   .navbar input {
     width: 100%;
   }
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffcccb;
-  padding: 15px;
-}
-
-.search-container input {
-  padding: 8px;
-  width: 250px;
-}
-
-.cake-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-.cake-card {
-  text-align: center;
-  padding: 15px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.cake-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* ===== HOVER EFFECT ===== */
-.cake-card:hover {
-  background: #cce7ff5f;  /* light blue */
-  transform: scale(1.05);
-}
-
-/* Highlight matched text */
+/* ===== HIGHLIGHT & NO RESULTS ===== */
 .highlight {
   background: yellow;
   font-weight: bold;
 }
 
-/* No result message */
 #noResult {
   text-align: center;
   color: red;
 }
 
+/* Cake card fix */
+.cake-card {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+/* Add to cart button */
+.cart-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff6b6b;
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-btn:hover {
+  background: #e55a5a;
+}
+
+/* Cart page */
+.cart-container {
+  padding: 20px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 15px;
+  background: #222;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+}
+
+@media(max-width:768px){
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
