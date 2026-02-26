@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+
+<h1>{{ cake.name }}</h1>
+
+<img src="{{ cake.image.url }}" width="300">
+
+<h3>Price: Rs {{ cake.price }}</h3>
+
+<p>{{ cake.description }}</p>
+
+{% if in_cart %}
+    <a href="{% url 'remove_cart' cake.id %}">
+        <button>Remove from Cart</button>
+    </a>
+{% else %}
+    <a href="{% url 'add_to_cart' cake.id %}">
+        <button>Add to Cart</button>
+    </a>
+{% endif %}
+
+<br><br>
+<a href="{% url 'cart' %}">Go to Cart</a>
+
+{% endblock %}

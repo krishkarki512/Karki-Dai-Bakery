@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Checkout | Karki Dai Bakery{% endblock %}
+
+{% block content %}
+<h2>Checkout</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<input type="text" name="full_name" placeholder="Full Name" required>
+<input type="text" name="address" placeholder="Address" required>
+<input type="text" name="phone" placeholder="Phone Number" required>
+
+<h3>Total: Rs. {{ total }}</h3>
+
+<button type="submit">Place Order</button>
+</form>
+
+</div>
+
+{% endblock %}
